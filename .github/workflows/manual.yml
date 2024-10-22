@@ -11,6 +11,7 @@ on:
 jobs:
     print:
         runs-on: ubuntu-latest
-        env: ${{ vars.USERNAME }}
+        env:
+            username: ${{ vars.USERNAME }}
         steps:
-            - run: echo "helow"
+            - run: echo "${{username}}"
