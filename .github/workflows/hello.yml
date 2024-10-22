@@ -1,8 +1,15 @@
-name: Hello
+name: PRflow
+run-name: run push
 on: push
 jobs:
-    hello:
-        runs-on: ubuntu-latest
-        steps:
-            - run: echo 'hello, world'
-            - uses: actions/checkout@v4
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - run: gh pr comment "${{GITHUB_HEAD_REF}}" --body "hello, ${{GITHUB_ACTOR}}"
+      env: 
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
