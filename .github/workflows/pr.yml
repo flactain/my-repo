@@ -1,5 +1,5 @@
 name: PRflow
-run-name: run with ${{ github.head}}-${{github.event.pull_request_title}}
+run-name: run with ${{ github.head}}-${{github.event.pull_request_title}} dev
 on: pull_request
 jobs:
     test:
