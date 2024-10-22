@@ -9,7 +9,8 @@ on:
                         - warn
                         - error
 jobs:
-    run:
+    print:
         runs-on: ubuntu-latest
+        env: ${{ vars.USERNAME }}
         steps:
             - run: echo "helow"
