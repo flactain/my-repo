@@ -1,4 +1,5 @@
 name: Manual
+run-name: run with @ ${{github.event}}
 on: push
 jobs:
   print:
