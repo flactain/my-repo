@@ -9,5 +9,5 @@ jobs:
             contents: read
         steps:
             - uses: actions/checkout@v4
-            - run: prprpr
+            - run: echo "prprpr"
 
