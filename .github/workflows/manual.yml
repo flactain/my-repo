@@ -1,13 +1,5 @@
 name: Manual
-on: 
-    workflow_dispatch:
-        inputs:
-            log-level:
-                    type: choice
-                    options:
-                        - info
-                        - warn
-                        - error
+on: push
 jobs:
     print:
         runs-on: ubuntu-latest
