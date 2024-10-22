@@ -1,0 +1,13 @@
+name: PRflow
+run-name: run with ${{ github.head}}-${{github.event.pull_request_title}}
+on: pull_request
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        permissions:
+            pull-requests: write
+            contents: read
+        steps:
+            - uses: actions/checkout@v4
+            - run: prprpr
+
