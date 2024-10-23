@@ -1,13 +1,15 @@
 name: PRflow
-run-name: run with ${{ github.head}}-${{github.event.pull_request_title}}
+run-name: run with ${{ github.head}}-${{github.event.pull_request_title}} dev
 on: pull_request
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        permissions:
-            pull-requests: write
-            contents: read
-        steps:
-            - uses: actions/checkout@v4
-            - run: prprpr
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - run: gh pr comment "${{GITHUB_HEAD_REF}}" --body "hello, ${{GITHUB_ACTOR}}"
+      env: 
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
