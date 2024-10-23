@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "::groupo::Show Enviroment variables"
+          echo "::group::Show Enviroment variables"
           printenv
           echo "::endgroup::"
